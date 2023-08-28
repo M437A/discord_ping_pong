@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/bot_discord
+    username: postgres
+    password: qwerty
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+server:
+  port: 8080
+
+bot:
+  token: "MTE0NDA0ODc2NTY0NTM3NzU5Ng.GmcJjm.sLql_neN4f45-AtmWQbKZCOdE7uJxB45Q1lOvM"
+
+services:
+  discord:
+    targetWord: "!ping"
+    answer: "!pong"
